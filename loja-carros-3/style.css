@@ -114,3 +114,26 @@ header h1 {
     color: #111;
     font-weight: bold;
 }
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .car {
+        grid-template-columns: 1fr;
+    }
+    .nav-bar {
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .car {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .nav-bar {
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+        
+    }
+}
+
