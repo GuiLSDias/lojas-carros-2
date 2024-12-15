@@ -1,8 +1,10 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -17,9 +19,9 @@ h1 {
 
 .car {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -28,9 +30,15 @@ h1 {
     color: #fff;
     border-radius: 4px;
     padding: 20px;
+    display: flex;
     gap: 20px;
     align-items: flex-start;
-    display: flex;
+}
+
+.car-item img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 5px;
 }
 
 .car-item h2 {
@@ -62,17 +70,10 @@ button {
     font-weight: bold;
     cursor: pointer;
     margin-top: 15px;
-    text-align: left;
-    
 }
 
 button:hover {
     background-color: #e5ac01;
-}
-
-.car-item img {
-    width: 200px;
-    border-radius: 5px;
 }
 
 ul {
@@ -81,11 +82,6 @@ ul {
     gap: 15px;
 }
 
-header img {
-    width: 80px;
-    border-radius: 50%;
-    border: 2px solid rgb(49, 85, 55);
-}
 
 header {
     display: flex;
@@ -93,12 +89,19 @@ header {
     justify-content: center;
     gap: 15px;
     margin: 0 auto;
-    width: 900px;
+    max-width: 1200px;
 }
 
-header button{
-    background-color: rgb(49, 85, 55);
-    color: white;
+header img {
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid rgb(49, 85, 55);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #111;
+    font-weight: bold;
 }
 
 .nav-bar {
@@ -109,10 +112,16 @@ header button{
     margin-left: auto;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    color: #111;
-    font-weight: bold;
+header button {
+    background-color: rgb(49, 85, 55);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: rgb(40, 70, 45);
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
@@ -122,18 +131,45 @@ header h1 {
     .nav-bar {
         grid-template-columns: 1fr 1fr;
         display: grid;
+        
+    }
+    header {
+        flex-direction: column; 
+        gap: 10px;
+        width: 100%; 
+        padding: 10px;
+        text-align: center; 
+    }
+    header img {
+        width: 60px; 
+    }
+    header h1 {
+        font-size: 1.8rem; 
+    }
+    .nav-bar {
+        margin: 20px;
+        gap: 10px;
+    }
+    header button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
     }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .car {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .nav-bar {
-        grid-template-columns: 1fr 1fr;
         display: grid;
-        
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 }
 
+@media screen and (min-width: 769px) {
+    .car {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
